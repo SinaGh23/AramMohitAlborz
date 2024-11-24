@@ -1,0 +1,566 @@
+/******** media queries ********/
+
+/******** 1200px ********/
+
+@media (max-width: 68.75em) {
+  .herocontainer {
+    gap: 6.4rem;
+    max-width: 60rem;
+    padding-top: 0;
+  }
+
+  .heroimg {
+    max-width: 110%;
+  }
+
+  .how-section-container {
+    max-width: 60rem;
+    padding: 3.2rem 4.8rem 3.2rem 4.8rem;
+  }
+
+  .khadamat-section {
+    max-width: 68.75rem;
+  }
+
+  .khadamat-section-container {
+    max-width: 65rem;
+    gap: 3.2rem;
+  }
+
+  .khadamat-titr-bozorg {
+    padding-right: 4.8rem;
+  }
+
+  .khadamat-titr {
+    padding-right: 4.8rem;
+  }
+
+  .gallery {
+    padding-right: 0;
+  }
+
+  .why-us {
+    padding: 2.4rem 3.2rem;
+  }
+
+  .info-border {
+    padding: 1.2rem 14rem;
+  }
+
+  .blog-section {
+    max-width: 68.75rem;
+  }
+
+  .blog-container {
+    padding: 2.4rem 3.2rem;
+    gap: 2.4rem;
+  }
+
+  .header-blog {
+    margin-right: 4.8rem;
+  }
+
+  .form-section {
+    padding: 3.2rem 4.8rem 2.4rem 4.8rem;
+  }
+
+  .form-section-text {
+    padding: 0 2.4rem 1.2rem 2.4rem;
+  }
+
+  .footer-img {
+    max-width: 120%;
+  }
+
+  .footer-section {
+    padding-top: 6.4rem;
+  }
+}
+
+/********************************************************
+ 1030px ***************************************************************/
+
+@media (max-width: 64.375em) {
+  .mainheader {
+    font-size: 3rem;
+  }
+
+  .herotext {
+    gap: 0rem;
+  }
+
+  .header-container {
+    padding-bottom: 0;
+  }
+
+  .gallery {
+    gap: 0.6rem;
+  }
+
+  .khadamat-titr-bozorg {
+    font-size: 1.6rem;
+  }
+
+  .blog-text {
+    padding: 0 0.8rem;
+  }
+
+  .why-us {
+    padding-bottom: 1.2rem;
+  }
+
+  .form-section-second-header {
+    padding: 0 0 1.2rem 0;
+  }
+
+  .footer-contact-us {
+    padding-right: 1.6rem;
+  }
+
+  .about-us-text {
+    font-size: 0.8rem;
+  }
+
+  .footer-about-us {
+    padding-left: 2.4rem;
+  }
+
+  .footer-contact-us {
+    font-size: 0.8rem;
+  }
+
+  .footer-section {
+    padding-top: 4.8rem;
+  }
+
+  .tozih-blog {
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    font-size: 1.3rem;
+    padding: 0.8rem 0.6rem;
+  }
+
+  .herotozihat {
+    font-size: 1.4rem;
+  }
+
+  .how-img {
+    max-width: 55%;
+  }
+
+  .contact-us {
+    font-size: 2rem;
+  }
+
+  .contact-num {
+    font-size: 2rem;
+  }
+
+  .info-border {
+    padding: 1.4rem 8rem;
+  }
+
+  .phone-icon {
+    width: 2.4rem;
+    padding: 0.8rem;
+  }
+
+  .why-us-icons {
+    width: 2rem;
+  }
+
+  .info-titr {
+    font-size: 1rem;
+  }
+
+  .why-us-tozihat {
+    font-size: 1rem;
+  }
+
+  .blog-container {
+    gap: 1.2rem;
+    padding: 2rem 2rem;
+  }
+
+  .form-section-second-header {
+    font-size: 1rem;
+  }
+
+  .form-section-header {
+    font-size: 1.6rem;
+  }
+
+  .form-section-form label {
+    font-size: 1rem;
+  }
+
+  .form-section-form input {
+    font-size: 1rem;
+  }
+
+  .form-section-form select {
+    font-size: 1rem;
+  }
+
+  .form-section-form button {
+    font-size: 1rem;
+  }
+
+  .form-section {
+    padding: 3.2rem 3.2rem 2.4rem 3.2rem;
+  }
+}
+
+/**********************************************************
+ 770px ***********************************************************/
+
+@media (max-width: 48.125em) {
+  .herocontainer {
+    grid-template-columns: 1fr;
+  }
+
+  .herotozihat {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+    text-align: center;
+  }
+
+  .heroimg {
+    max-width: 80%;
+  }
+
+  .mainheader {
+    font-size: 2.8rem;
+  }
+
+  .how-img {
+    max-width: 75%;
+  }
+
+  .how-section-container {
+    padding: 3.2rem 2.4rem;
+  }
+
+  .how-img-text-container {
+    gap: 1.8rem;
+  }
+
+  .titr-biger {
+    font-size: 1.8rem;
+  }
+
+  .titr {
+    font-size: 1.2rem;
+  }
+
+  .how-text-titr {
+    font-size: 1.4rem;
+  }
+
+  .how-text-tozihat {
+    font-size: 1rem;
+  }
+
+  .khadamat-section-container {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+
+  .khadamat-section {
+    padding: 1.6rem 3.2rem;
+  }
+
+  .khadamat-items {
+    padding: 1.8rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .khadamat-titr {
+    text-align: right;
+    padding: 0;
+    font-size: 1.2rem;
+  }
+
+  .khadamat-titr-bozorg {
+    text-align: right;
+    padding: 0;
+    font-size: 1.6rem;
+  }
+
+  .how-text-number {
+    font-size: 3.8rem;
+  }
+
+  .khadamat-text {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .info-border {
+    padding: 1.4rem;
+  }
+
+  .why-us {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-us-icons {
+    margin-bottom: 0;
+    width: 1.6rem;
+  }
+
+  .blog-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 3.2rem;
+    padding-right: 3.2rem;
+    padding-left: 3.2rem;
+  }
+
+  .header-blog {
+    font-size: 1.2rem;
+    margin-right: 3.2rem;
+  }
+
+  .blogs {
+    margin: 0.6rem 0.2rem;
+  }
+
+  .form-section-form {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-section-container {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-img {
+    max-width: 100%;
+  }
+
+  .footer-about-us {
+    padding: 0 1.6rem 0 0;
+  }
+
+  .flesh-blog {
+    max-width: 1rem;
+  }
+
+  .header-section {
+    position: relative;
+    /* position: fixed; */
+    /* width: 100%; */
+  }
+
+  .navigation {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    gap: 1.8rem;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in;
+    backdrop-filter: blur(5px);
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .logo-img {
+    transform: translate(0);
+  }
+
+  .logo-container {
+    margin: 0;
+  }
+
+  .button-mobile-nav {
+    display: block;
+    z-index: 9999;
+    margin: 0;
+  }
+
+  .nav-open .navigation {
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    transform: translateX(0);
+    background-color: rgb(255, 255, 255, 0.9);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .nav-last-item {
+    margin-right: 0;
+  }
+
+  .nav-items {
+    font-size: 1.6rem;
+  }
+
+  .herotext {
+    padding-top: 0;
+  }
+
+  .herocontainer {
+    gap: 4.8rem;
+  }
+
+  .why-us {
+    row-gap: 0.8rem;
+  }
+}
+
+/*********************************************************
+ 450px **********************************************************/
+
+@media (max-width: 28.125em) {
+  .hero-buttons {
+    padding: 0.6rem 0.6rem;
+  }
+
+  .herocontainer {
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+  }
+
+  .titr-biger {
+    font-size: 1.2rem;
+  }
+
+  .titr {
+    font-size: 1rem;
+  }
+
+  .how-img-text-container {
+    grid-template-columns: 1fr;
+    row-gap: 0;
+    padding-top: 3.2rem;
+  }
+
+  .how-img {
+    max-width: 46%;
+  }
+
+  .how-img-container::before {
+    padding: 27%;
+  }
+
+  .how-img-container {
+    grid-row: 1;
+  }
+
+  .how-text-number {
+    font-size: 2.4rem;
+  }
+
+  .khadamat-titr {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .khadamat-titr-bozorg {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .khadamat-items {
+    padding: 0;
+  }
+
+  .icon {
+    font-size: 1.3rem;
+  }
+
+  .iconss {
+    font-size: 1.1rem;
+  }
+
+  .khadamat {
+    gap: 1.8rem;
+  }
+
+  .khadamat-section-container {
+    padding-top: 1.8rem;
+    padding-bottom: 4rem;
+  }
+
+  .how-section-container {
+    padding: 1.8rem 2.4rem;
+  }
+
+  .khadamat-section {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    padding-bottom: 0;
+  }
+
+  .contact-us {
+    font-size: 1.4rem;
+  }
+
+  .contact-num {
+    font-size: 1.6rem;
+  }
+
+  .phone-icon {
+    width: 1.4rem;
+    margin-right: 1.2rem;
+  }
+
+  .info-border {
+    padding: 0.6rem 1.6rem;
+    gap: 1rem;
+  }
+
+  .why-us {
+    grid-template-columns: 1fr;
+  }
+
+  .why-us-icons {
+    width: 1.2rem;
+  }
+
+  .info-titr {
+    margin-top: 0;
+  }
+
+  .blog-container {
+    padding: 2rem 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .form-section {
+    padding: 3.2rem 1.8rem 2.4rem 1.8rem;
+  }
+
+  .form-section-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .form-section-img {
+    grid-row: 1;
+    background-position: top;
+  }
+}

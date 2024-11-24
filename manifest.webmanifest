@@ -1,0 +1,14 @@
+{
+  "icons": [
+    {
+      "src": "images/logo img/logo little android.webp",
+      "type": "image/webp",
+      "sizes": "192x144"
+    },
+    {
+      "src": "images/logo img/logo little.webp",
+      "type": "image/webp",
+      "sizes": "512x384"
+    }
+  ]
+}
