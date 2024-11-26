@@ -474,6 +474,12 @@ html {
   direction: rtl;
 }
 
+.tamas {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
 /*********** blog section  **********/
 
 .blog-section {
