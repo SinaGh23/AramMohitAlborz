@@ -478,6 +478,7 @@ html {
   display: flex;
   flex-direction: column;
   margin: 0;
+  text-decoration: none;
 }
 
 /*********** blog section  **********/
