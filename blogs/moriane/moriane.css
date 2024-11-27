@@ -311,4 +311,13 @@ body {
     .nav-last-item{
       margin-right: 1rem;
     }
+
+    .nav-items{
+      text-align: center;
+      padding: 0.8rem 0.4rem;
+    }
+
+    .logo-container{
+      margin-right: 1rem;
+    }
   }
