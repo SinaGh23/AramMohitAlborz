@@ -107,9 +107,19 @@ body {
   align-items: center;
   padding: 2.4rem 0;
 }
+
 .main-img {
   max-width: 80%;
   justify-self: center;
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+
+.main-img:hover{
+  border-radius: 2rem;
+  scale: 1.2;
+  opacity: 80%;
+  box-shadow: 2px 2px 20px #333 ;
 }
 
 .side{
@@ -238,6 +248,67 @@ body {
 
 @media(max-width:28.125em){
   html{
-    font-size: 40%;
+    font-size: 70%;
   }
-}
+  
+  .blog-section{
+      margin-right: 0;
+      margin-bottom: 4.6rem;
+    }
+  
+    .blog-tozihat{
+      font-size: 1.1rem;
+    }
+  
+    .main-header{
+      font-size: 2.2rem;
+      padding: 1.6rem 0;
+    }
+  
+    .side-text{
+      font-size: 1.2rem;
+      padding-top:1.2rem ;
+      padding-bottom: 1.2rem;
+    }
+  
+  .blog-header-img-container{
+    column-gap: 1rem;
+  }
+  
+  .main-img{
+    max-width: 100%;
+  }
+  
+    .side{
+      margin: 0 0.8rem;
+    }
+  
+    .flesh-blog{
+      width: 1rem;
+    }
+  
+    .exept-header-container{
+      padding: 2.4rem 3.2rem;
+    }
+  
+    .side-link{
+      text-align: center;
+      font-size: 1rem;
+    }
+  
+    .footer-section-container{
+      grid-template-columns: 1fr;
+    }
+  
+    .footer-contact-us{
+      padding-right: 1rem;
+    }
+  
+    .footer-about-us{
+      padding-right: 1rem;
+    }
+
+    .nav-last-item{
+      margin-right: 1rem;
+    }
+  }
