@@ -301,10 +301,6 @@
     text-align: center;
   }
 
-  .info-border {
-    /* padding: 1.4rem; */
-  }
-
   .why-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -348,13 +344,11 @@
   }
 
   .flesh-blog {
-    max-width: 1rem;
+    width: 1rem;
   }
 
   .header-section {
     position: relative;
-    /* position: fixed; */
-    /* width: 100%; */
   }
 
   .navigation {
