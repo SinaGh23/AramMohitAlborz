@@ -563,4 +563,8 @@
     grid-row: 1;
     background-position: top;
   }
+
+  .footer-logo-img {
+    max-width: 7%;
+  }
 }

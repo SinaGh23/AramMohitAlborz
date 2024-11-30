@@ -120,8 +120,25 @@ body {
   opacity: 80%;
   box-shadow: 2px 2px 20px #333 ;
 }
+
+
+/******** side section *********/
+
+
 .side{
   margin: 0 1.8rem;
+}
+
+.side p:nth-child(2){
+  font-family: vazirmatn;
+}
+
+.side p:nth-child(3){
+  font-family: vazirmatn;
+}
+
+.side p:nth-child(4){
+  font-family: vazirmatn;
 }
 
 .side-text{
@@ -155,14 +172,24 @@ body {
   transition: all 0.3s;
 }
 
+
+
 .side-link:hover{
   background-color: #6741d9;
   color: #fff;
 }
 
+.exept-header-container{
+  font-family: vazirmatn;
+}
+
 
 /******** footer section********/
 
+
+.footer-section{
+  font-family: vazirmatn;
+}
 
 .footer-section-container {
   display: grid;

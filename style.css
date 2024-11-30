@@ -9,7 +9,7 @@ body {
 }
 
 html {
-  font-family: mirath;
+  font-family: vazirmatn;
   /* font-size: 62.5%; */
 }
 
@@ -53,6 +53,7 @@ html {
   margin-bottom: 0;
   margin-top: 0;
   text-align: center;
+  font-family: mirath;
 }
 
 .herotozihat {
@@ -80,6 +81,7 @@ html {
   color: #fff;
   border-radius: 0.8rem;
   transition: all 0.3s;
+  font-family: mirath;
 }
 
 .button-less {
@@ -92,6 +94,7 @@ html {
   color: #555;
   border-radius: 0.8rem;
   transition: all 0.3s;
+  font-family: mirath;
 }
 
 .button-more:hover {
@@ -141,6 +144,7 @@ html {
   align-items: center;
   justify-content: center;
   gap: 2.4rem;
+  font-family: mirath;
 }
 
 .nav-last-item {
@@ -246,12 +250,14 @@ html {
   text-align: right;
   color: #6741d9;
   margin-bottom: 0;
+  font-family: mirath;
 }
 
 .titr-biger {
   font-size: 2.4rem;
   text-align: right;
   margin-top: 0.8rem;
+  font-family: mirath;
 }
 
 .how-text-tozihat {
@@ -275,6 +281,7 @@ html {
   font-weight: 500;
   margin-top: 0;
   margin-bottom: 0.8rem;
+  font-family: mirath;
 }
 
 /*********** KHADAMAT SECTION ***********/
@@ -310,6 +317,7 @@ html {
   color: #333;
   font-weight: 500;
   margin: 0;
+  /* font-family: mirath; */
 }
 
 .khadamat-items {
@@ -348,6 +356,7 @@ html {
   padding-top: 1.2rem;
   font-size: 1.4rem;
   color: #6741d9;
+  font-family: mirath;
 }
 
 .khadamat-titr-bozorg {
@@ -355,6 +364,7 @@ html {
   padding-bottom: 2.4rem;
   padding-right: 9.6rem;
   font-size: 1.8rem;
+  font-family: mirath;
 }
 
 .gallery {
@@ -411,6 +421,7 @@ html {
 .contact-us {
   font-size: 2.4rem;
   color: #e5dbff;
+  font-family: mirath;
 }
 
 .contact-num {
@@ -440,7 +451,7 @@ html {
 
 .info-border {
   border: 1px solid #e5dbff;
-  padding: 2.4rem 14rem;
+  padding: 2rem 18rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -465,6 +476,7 @@ html {
   font-size: 1.2rem;
   font-weight: 800;
   text-align: right;
+  font-family: mirath;
 }
 
 .why-us-tozihat {
@@ -500,6 +512,7 @@ html {
   font-size: 1.6rem;
   text-align: right;
   margin-right: 6.4rem;
+  font-family: mirath;
 }
 
 .blog-img {
@@ -526,6 +539,7 @@ html {
 .titr-blog {
   font-size: 1.4rem;
   color: #46327c;
+  font-family: mirath;
 }
 
 .tozih-blog {
@@ -547,6 +561,7 @@ html {
   text-decoration: none;
   font-weight: 700;
   color: #46327c;
+  font-family: mirath;
 }
 
 .flesh-blog {
@@ -596,6 +611,7 @@ html {
   font-size: 1.2rem;
   display: block;
   padding-bottom: 0.8rem;
+  font-family: mirath;
 }
 
 .form-section-form input {
@@ -661,6 +677,7 @@ html {
 
 .form-section-header {
   font-size: 2rem;
+  font-family: mirath;
 }
 
 .form-section-second-header {
@@ -747,4 +764,12 @@ html {
 .footer-about-us .flesh-blog {
   max-width: 0.8rem;
   padding: 0 0 0 0.4rem;
+}
+
+.contact-us-header {
+  font-family: mirath;
+}
+
+.about-us-header {
+  font-family: mirath;
 }
