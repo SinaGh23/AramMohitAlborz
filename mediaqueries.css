@@ -431,6 +431,7 @@
 @media (max-width: 28.125em) {
   .hero-buttons {
     padding: 0.6rem 0.6rem;
+    font-size: 1.1rem;
   }
 
   .herocontainer {
@@ -511,6 +512,7 @@
 
   .contact-us {
     font-size: 1.4rem;
+    text-align: center;
   }
 
   .contact-num {
@@ -560,5 +562,13 @@
 
   .footer-logo-img {
     max-width: 7%;
+  }
+
+  .mainheader {
+    font-size: 2.5rem;
+  }
+
+  .herotozihat {
+    font-size: 1.4rem;
   }
 }
