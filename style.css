@@ -322,6 +322,7 @@ html {
   color: #333;
   font-weight: 500;
   margin: 0;
+  text-align: center;
   /* font-family: estedad; */
 }
 
@@ -353,6 +354,11 @@ html {
   padding: 0.8rem 0.8rem 0.8rem 0;
   font-size: 1.8rem;
   color: #46327c;
+}
+
+.icon01 {
+  font-size: 2.2rem;
+  padding-right: 0.2rem;
 }
 
 .khadamat-titr {

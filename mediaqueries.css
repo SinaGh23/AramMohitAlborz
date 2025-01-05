@@ -211,6 +211,11 @@
   .form-section {
     padding: 3.2rem 3.2rem 2.4rem 3.2rem;
   }
+
+  .icon01 {
+    font-size: 3.2rem;
+    /* padding-right: 0rem; */
+  }
 }
 
 /**********************************************************
@@ -423,6 +428,11 @@
   .why-us {
     row-gap: 0.8rem;
   }
+
+  .icon01 {
+    font-size: 3rem;
+    /* padding-right: 0rem; */
+  }
 }
 
 /*********************************************************
@@ -489,6 +499,11 @@
 
   .iconss {
     font-size: 1.1rem;
+  }
+
+  .icon01 {
+    font-size: 1.8rem;
+    padding-right: 0rem;
   }
 
   .khadamat {
