@@ -36,7 +36,9 @@
   }
 
   .gallery {
-    padding-right: 0;
+    padding: 0;
+    margin: 0 auto;
+    justify-items: center;
   }
 
   .why-us {
@@ -54,10 +56,12 @@
   .blog-container {
     padding: 2.4rem 3.2rem;
     gap: 2.4rem;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   .header-blog {
     margin-right: 4.8rem;
+    margin-left: 4.8rem;
   }
 
   .form-section {
@@ -75,6 +79,43 @@
   .footer-section {
     padding-top: 6.4rem;
   }
+
+  .footer-section-container {
+    gap: 3.5rem;
+    padding: 4.5rem 3rem;
+  }
+
+  .footer-about-us h3,
+  .footer-contact-us h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .about-us-text,
+  .contact-us-text {
+    font-size: 1.1rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .footer-logo-img-container {
+    padding: 3rem 2rem;
+    margin-top: 0;
+  }
+
+  .footer-logo-img {
+    max-width: 15%;
+  }
+
+  .logo-text {
+    font-size: 1.1rem;
+    margin: 1.2rem 0;
+    line-height: 1.6;
+  }
+
+  .flesh-blog {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
 }
 
 /********************************************************
@@ -82,11 +123,15 @@
 
 @media (max-width: 64.375em) {
   .mainheader {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 
   .herotext {
-    gap: 0rem;
+    gap: 2rem;
+  }
+
+  .herotozihat {
+    font-size: 1.5rem;
   }
 
   .header-container {
@@ -133,6 +178,23 @@
     padding-top: 4.8rem;
   }
 
+  .footer-section-container {
+    gap: 3rem;
+    padding: 4rem 2.5rem;
+  }
+
+  .footer-about-us h3,
+  .footer-contact-us h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .about-us-text,
+  .contact-us-text {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
   .tozih-blog {
     font-size: 0.9rem;
   }
@@ -151,11 +213,18 @@
   }
 
   .contact-us {
-    font-size: 1.6rem;
+    font-size: 2.2rem;
+    line-height: 1.3;
   }
 
   .contact-num {
-    font-size: 1.6rem;
+    font-size: 2rem;
+    gap: 1.2rem;
+  }
+
+  .tamas {
+    font-size: 1.8rem;
+    font-weight: 600;
   }
 
   .info-border {
@@ -163,12 +232,16 @@
   }
 
   .phone-icon {
-    width: 2.4rem;
-    padding: 0.8rem;
+    width: 4rem;
+    height: 4rem;
+    padding: 1.2rem;
+    margin-right: 1.8rem;
   }
 
   .why-us-icons {
-    width: 2rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 1.2rem;
   }
 
   .info-titr {
@@ -182,6 +255,7 @@
   .blog-container {
     gap: 1.2rem;
     padding: 2rem 2rem;
+    grid-template-columns: 1fr 1fr;
   }
 
   .form-section-second-header {
@@ -213,7 +287,7 @@
   }
 
   .icon01 {
-    font-size: 3.2rem;
+    font-size: 3.8rem;
     /* padding-right: 0rem; */
   }
 }
@@ -224,112 +298,228 @@
 @media (max-width: 48.125em) {
   .herocontainer {
     grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 2.5rem 2rem 3rem 2rem;
+  }
+
+  .hero-img-container {
+    order: 2;
+  }
+
+  .herotext {
+    order: 1;
+    gap: 2rem;
+    padding-top: 1rem;
   }
 
   .herotozihat {
-    padding-top: 1.6rem;
-    padding-bottom: 1.6rem;
+    padding: 1.5rem 1.2rem;
     text-align: center;
-  }
-
-  .heroimg {
-    max-width: 80%;
-  }
-
-  .mainheader {
-    font-size: 2.8rem;
-  }
-
-  .how-img {
-    max-width: 75%;
-  }
-
-  .how-section-container {
-    padding: 3.2rem 2.4rem;
-  }
-
-  .how-img-text-container {
-    gap: 1.8rem;
-  }
-
-  .titr-biger {
-    font-size: 1.8rem;
-  }
-
-  .titr {
-    font-size: 1.2rem;
-  }
-
-  .how-text-titr {
     font-size: 1.4rem;
   }
 
+  .heroimg {
+    max-width: 85%;
+  }
+
+  .mainheader {
+    font-size: 2.6rem;
+    line-height: 1.3;
+  }
+
+  .buttons {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-buttons {
+    padding: 1rem 1.8rem;
+    font-size: 1.3rem;
+  }
+
+  .how-img {
+    max-width: 65%;
+  }
+
+  .how-section-container {
+    padding: 4rem 2rem;
+  }
+
+  .how-img-text-container {
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .titr-biger {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .titr {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .how-text-titr {
+    font-size: 1.6rem;
+    line-height: 1.4;
+  }
+
   .how-text-tozihat {
-    font-size: 1rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
+  }
+
+  .how-text-number {
+    font-size: 4.5rem;
+  }
+
+  .how-text-container {
+    padding: 0 1rem;
   }
 
   .khadamat-section-container {
     grid-template-columns: 1fr;
-    padding-top: 0;
+    padding-top: 2rem;
+    gap: 3rem;
   }
 
   .khadamat-section {
-    padding: 1.6rem 3.2rem;
+    padding: 4rem 2rem;
+  }
+
+  .khadamat {
+    gap: 2.5rem;
+    margin-bottom: 2rem;
   }
 
   .khadamat-items {
-    padding: 1.8rem;
+    padding: 1.5rem;
   }
 
-  .gallery {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .khadamat-titr {
-    text-align: right;
-    padding: 0;
-    font-size: 1.2rem;
-  }
-
-  .khadamat-titr-bozorg {
-    text-align: right;
-    padding: 0;
-    font-size: 1.6rem;
-  }
-
-  .how-text-number {
-    font-size: 3.8rem;
+  .khadamat-img {
+    max-width: 85%;
   }
 
   .khadamat-text {
     font-size: 1.2rem;
     text-align: center;
+    margin-top: 0.8rem;
+  }
+
+  .iconss {
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    margin-top: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .icon {
+    font-size: 2rem;
+    padding: 0.4rem 0.5rem 0.4rem 0;
+  }
+
+  .icon01 {
+    font-size: 2.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+    padding: 0;
+    margin: 0 auto;
+    justify-items: center;
+  }
+
+  .gallery-items {
+    border-radius: 15px;
+  }
+
+  .khadamat-titr {
+    text-align: center;
+    padding: 0 1rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .khadamat-titr-bozorg {
+    text-align: center;
+    padding: 0 1rem;
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+
+  .how-text-number {
+    font-size: 4.5rem;
   }
 
   .why-us {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .info {
+    padding: 1.5rem;
   }
 
   .why-us-icons {
     margin-bottom: 0;
-    width: 1.6rem;
+    width: 4rem;
+    height: 4rem;
+    padding: 1rem;
   }
 
   .blog-container {
     grid-template-columns: 1fr 1fr;
-    gap: 3.2rem;
-    padding-right: 3.2rem;
-    padding-left: 3.2rem;
+    gap: 2rem;
+    padding: 2rem 1.5rem;
   }
 
   .header-blog {
-    font-size: 1.2rem;
-    margin-right: 3.2rem;
+    font-size: 2.2rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
   }
 
   .blogs {
-    margin: 0.6rem 0.2rem;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .titr-blog {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .tozih-blog {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .blog-text {
+    padding: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .edame {
+    font-size: 1.1rem;
+    margin-top: auto;
   }
 
   .form-section-form {
@@ -338,18 +528,48 @@
 
   .footer-section-container {
     grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 2rem;
   }
 
   .footer-img {
-    max-width: 100%;
+    max-width: 110%;
+    width: 100%;
+    height: auto;
   }
 
   .footer-about-us {
     padding: 0 1.6rem 0 0;
+    text-align: center;
+  }
+
+  .footer-contact-us {
+    text-align: center;
+  }
+
+  .footer-image-container {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+
+  .footer-logo-img-container {
+    padding: 2.5rem 1.5rem;
+    margin-top: 0;
+  }
+
+  .footer-logo-img {
+    max-width: 12%;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+    margin: 1rem 0;
+    line-height: 1.6;
   }
 
   .flesh-blog {
-    width: 1rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .header-section {
@@ -357,18 +577,22 @@
   }
 
   .navigation {
-    position: absolute;
-    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
     width: 100%;
     height: 100vh;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 2.5rem;
+    padding-top: 5rem;
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
     transform: translateX(100%);
     transition: all 0.5s ease-in;
-    backdrop-filter: blur(5px);
+    z-index: 9998;
   }
 
   html {
@@ -391,6 +615,7 @@
     display: block;
     z-index: 9999;
     margin: 0;
+    position: relative;
   }
 
   .nav-open .navigation {
@@ -398,7 +623,6 @@
     pointer-events: all;
     visibility: visible;
     transform: translateX(0);
-    background-color: rgb(255, 255, 255, 0.9);
   }
 
   .nav-open .icon-mobile-nav[name="close-outline"] {
@@ -409,11 +633,18 @@
     display: none;
   }
 
-  .nav-last-item {
-    margin-right: 0;
+  .nav-items {
+    font-size: 1.8rem;
+    padding: 1.2rem 2rem;
   }
 
-  .nav-items {
+  .nav-items::after {
+    bottom: 0.5rem;
+  }
+
+  .nav-last-item {
+    margin-right: 0;
+    margin-top: 1rem;
     font-size: 1.6rem;
   }
 
@@ -425,12 +656,30 @@
     gap: 4.8rem;
   }
 
+  .header-container {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .logo-img {
+    width: 3.5rem;
+  }
+
+  .button-mobile-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .icon-mobile-nav {
+    height: 3rem;
+    width: 3rem;
+  }
+
   .why-us {
     row-gap: 0.8rem;
   }
 
   .icon01 {
-    font-size: 3rem;
+    font-size: 3.6rem;
     /* padding-right: 0rem; */
   }
 }
@@ -439,151 +688,446 @@
  450px **********************************************************/
 
 @media (max-width: 28.125em) {
+  .herocontainer {
+    padding: 1.5rem 1.2rem 2rem 1.2rem;
+    gap: 1.5rem;
+  }
+
+  .herotext {
+    gap: 1.2rem;
+    padding-top: 0.5rem;
+  }
+
   .hero-buttons {
-    padding: 0.6rem 0.6rem;
+    padding: 0.8rem 1.3rem;
     font-size: 1.1rem;
   }
 
-  .herocontainer {
-    padding-right: 2.4rem;
-    padding-left: 2.4rem;
+  .buttons {
+    gap: 0.6rem;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-buttons {
+    width: 100%;
   }
 
   .titr-biger {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
   }
 
   .titr {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .how-section-container {
+    padding: 2.5rem 1rem;
   }
 
   .how-img-text-container {
     grid-template-columns: 1fr;
-    row-gap: 0;
-    padding-top: 3.2rem;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .how-img {
-    max-width: 46%;
+    max-width: 50%;
   }
 
   .how-img-container::before {
-    padding: 27%;
+    padding: 28%;
   }
 
   .how-img-container {
     grid-row: 1;
+    margin-bottom: 1rem;
   }
 
   .how-text-number {
-    font-size: 2.4rem;
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
   }
 
-  .khadamat-titr {
-    font-size: 1rem;
-    text-align: center;
+  .how-text-titr {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin-bottom: 0.6rem;
   }
 
-  .khadamat-titr-bozorg {
-    font-size: 1.2rem;
-    text-align: center;
+  .how-text-tozihat {
+    font-size: 1.05rem;
+    line-height: 1.6;
   }
 
-  .khadamat-items {
+  .how-text-container {
     padding: 0;
   }
 
-  .icon {
-    font-size: 1.3rem;
-  }
-
-  .iconss {
-    font-size: 1.1rem;
-  }
-
-  .icon01 {
-    font-size: 1.8rem;
-    padding-right: 0rem;
-  }
-
-  .khadamat {
-    gap: 1.8rem;
+  .khadamat-section {
+    padding: 2.5rem 1rem;
   }
 
   .khadamat-section-container {
-    padding-top: 1.8rem;
-    padding-bottom: 4rem;
+    padding-top: 1rem;
+    padding-bottom: 2.5rem;
+    gap: 1.5rem;
   }
 
-  .how-section-container {
-    padding: 1.8rem 2.4rem;
+  .khadamat {
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .khadamat-section {
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-    padding-bottom: 0;
+  .khadamat-items {
+    padding: 1rem 0.3rem;
+  }
+
+  .khadamat-img {
+    max-width: 95%;
+  }
+
+  .khadamat-text {
+    font-size: 1rem;
+    margin-top: 0.4rem;
+  }
+
+  .icon {
+    font-size: 1.8rem;
+    padding: 0.3rem 0.4rem 0.3rem 0;
+  }
+
+  .iconss {
+    font-size: 0.95rem;
+    padding: 0.4rem 0.9rem;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .icon01 {
+    font-size: 2.2rem;
+    padding-right: 0rem;
+  }
+
+  .khadamat-titr {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 0.6rem;
+    padding: 0 0.3rem;
+  }
+
+  .khadamat-titr-bozorg {
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 1.2rem;
+    padding: 0 0.3rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 0;
+    margin: 0 auto;
+    justify-items: center;
+  }
+
+  .gallery-items {
+    border-radius: 12px;
   }
 
   .contact-us {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     text-align: center;
+    line-height: 1.3;
   }
 
   .contact-num {
     font-size: 1.6rem;
+    gap: 1rem;
+  }
+
+  .tamas {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.4;
   }
 
   .phone-icon {
-    width: 1.4rem;
+    width: 3rem;
+    height: 3rem;
     margin-right: 1.2rem;
+    padding: 0.7rem;
   }
 
   .info-border {
-    padding: 0.6rem 1.6rem;
-    gap: 1rem;
+    padding: 1.2rem 1.3rem;
+    gap: 1.2rem;
+    border-radius: 18px;
   }
 
   .why-us {
     grid-template-columns: 1fr;
+    gap: 1.2rem;
+    padding: 2rem 1rem;
+  }
+
+  .info {
+    padding: 1.3rem;
+    min-height: 250px;
   }
 
   .why-us-icons {
-    width: 1.2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.8rem;
   }
 
   .info-titr {
     margin-top: 0;
+    font-size: 1.3rem;
+  }
+
+  .why-us-tozihat {
+    font-size: 1rem;
+  }
+
+  .back-img {
+    height: 45vh;
+  }
+
+  .header-blog {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .blog-section {
+    padding: 2.5rem 1rem;
   }
 
   .blog-container {
-    padding: 2rem 0.8rem;
-    gap: 0.8rem;
+    grid-template-columns: 1fr;
+    padding: 1.5rem 0.5rem;
+    gap: 1.5rem;
+  }
+
+  .blogs {
+    border-radius: 15px;
+  }
+
+  .blog-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .titr-blog {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .tozih-blog {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .edame {
+    font-size: 1.1rem;
+    margin-top: auto;
+  }
+
+  .blog-text {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .blogs {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .form-section {
-    padding: 3.2rem 1.8rem 2.4rem 1.8rem;
+    padding: 2.5rem 1.2rem 2rem 1.2rem;
+  }
+
+  .form-section-text {
+    padding: 1.5rem 1.5rem;
+  }
+
+  .form-section-header {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .form-section-second-header {
+    font-size: 1.1rem;
+    padding: 0;
+  }
+
+  .form-section-form label {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-section-form input,
+  .form-section-form select {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+
+  .form-btn {
+    padding: 1rem;
+    font-size: 1.2rem;
   }
 
   .form-section-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
+    border-radius: 18px;
+  }
+
+  .form-section-container::before,
+  .form-section-container::after {
+    width: 120px;
+    height: 120px;
   }
 
   .form-section-img {
     grid-row: 1;
     background-position: top;
+    min-height: 200px;
+  }
+
+  .footer-section {
+    padding: 2rem 0.5rem;
+  }
+
+  .footer-section-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+
+  .footer-image-container {
+    order: -1;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+
+  .footer-img {
+    max-width: 120%;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-about-us,
+  .footer-contact-us {
+    text-align: center;
+    padding: 0;
+  }
+
+  .footer-about-us h3,
+  .footer-contact-us h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .about-us-text,
+  .contact-us-text {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    justify-content: center;
   }
 
   .footer-logo-img {
-    max-width: 7%;
+    max-width: 8%;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .footer-logo-img-container {
+    padding: 2rem 1rem;
+    margin-top: 0;
+  }
+
+  .footer-logo-img {
+    max-width: 10%;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+    margin: 0.8rem 0;
+    line-height: 1.5;
+  }
+
+  .flesh-blog {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .header-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .logo-img {
+    width: 3rem;
+  }
+
+  .button-mobile-nav {
+    padding: 0.2rem;
+  }
+
+  .icon-mobile-nav {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+
+  .navigation {
+    padding-top: 4.5rem;
+  }
+
+  .nav-items {
+    font-size: 1.6rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .nav-last-item {
+    font-size: 1.5rem;
   }
 
   .mainheader {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.35;
   }
 
   .herotozihat {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+    padding: 1rem 0.8rem;
+    line-height: 1.65;
+  }
+
+  .heroimg {
+    max-width: 85%;
+  }
+
+  .sectionhero {
+    min-height: auto;
+    padding: 1rem 0 1.5rem 0;
   }
 }
