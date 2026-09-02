@@ -375,6 +375,28 @@ body {
   color: #6741d9;
 }
 
+.quick-answer {
+  background-color: #f4f1fc;
+  border-right: 0.5rem solid #6741d9;
+  border-radius: 1rem;
+  padding: 1.4rem 1.8rem;
+  direction: rtl;
+  margin: 2.4rem 0 0 0;
+}
+
+.quick-answer-title {
+  font-size: 1.4rem;
+  color: #46327c;
+  margin: 0 0 0.6rem 0;
+}
+
+.quick-answer-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0;
+}
+
 .blog-tozihat a,
 .blog-list a {
   color: #6741d9;
@@ -606,6 +628,10 @@ body {
 
   .toc-box {
     padding: 1.2rem 1.6rem;
+  }
+
+  .quick-answer {
+    padding: 1.2rem 1.4rem;
   }
 
   .blog-list {
