@@ -1,0 +1,361 @@
+/* ===== Blog archive page (blogs/index.html) =====
+   Loads after blog.css which provides fonts, header and footer styles. */
+
+body {
+  background-color: #faf9fd;
+}
+
+/* ---- hero ---- */
+
+.archive-hero {
+  background: linear-gradient(135deg, #46327c 0%, #6741d9 100%);
+  color: #fff;
+  text-align: center;
+  padding: 6.4rem 2.4rem 8.8rem 2.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.archive-hero::before,
+.archive-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.archive-hero::before {
+  width: 34rem;
+  height: 34rem;
+  top: -14rem;
+  left: -10rem;
+}
+
+.archive-hero::after {
+  width: 26rem;
+  height: 26rem;
+  bottom: -12rem;
+  right: -8rem;
+}
+
+.archive-title {
+  font-size: 3.2rem;
+  margin: 0 0 1.2rem 0;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+}
+
+.archive-subtitle {
+  font-size: 1.4rem;
+  line-height: 1.9;
+  max-width: 64rem;
+  margin: 0 auto;
+  direction: rtl;
+  color: #e1d9f7;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- layout ---- */
+
+.archive-container {
+  max-width: 110rem;
+  margin: 0 auto;
+  padding: 0 2.4rem 6.4rem 2.4rem;
+}
+
+.archive-section-title {
+  direction: rtl;
+  text-align: right;
+  font-size: 1.9rem;
+  color: #46327c;
+  border-right: 0.4rem solid #6741d9;
+  padding-right: 1.2rem;
+  margin: 4.8rem 0 2rem 0;
+}
+
+/* ---- featured (newest) post ---- */
+
+.featured-post {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
+  background-color: #fff;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 12px 44px rgba(70, 50, 124, 0.14);
+  border: 1px solid #e1d9f7;
+  margin-top: -4.4rem;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.35s;
+}
+
+.featured-post:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 56px rgba(70, 50, 124, 0.22);
+}
+
+.featured-media {
+  position: relative;
+  min-height: 26rem;
+}
+
+.featured-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+  background-color: #6741d9;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem 1.4rem;
+  border-radius: 10rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.featured-body {
+  padding: 3.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+}
+
+.featured-title {
+  font-size: 2rem;
+  color: #2d2645;
+  margin: 1rem 0 1.2rem 0;
+  line-height: 1.6;
+}
+
+.featured-excerpt {
+  font-size: 1.2rem;
+  line-height: 1.9;
+  color: #55506b;
+  text-align: justify;
+  margin: 0 0 1.6rem 0;
+}
+
+/* ---- post cards ---- */
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  gap: 2.8rem;
+  direction: rtl;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  border: 1px solid #ece7f9;
+  box-shadow: 0 8px 28px rgba(70, 50, 124, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.35s;
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 44px rgba(103, 65, 217, 0.18);
+  border-color: #c9bcf0;
+}
+
+.card-media {
+  position: relative;
+  height: 18rem;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.post-card:hover .card-img {
+  transform: scale(1.07);
+}
+
+.card-body {
+  padding: 1.8rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.card-chip,
+.featured-body .card-chip {
+  align-self: flex-start;
+  background-color: #f4f1fc;
+  color: #6741d9;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.4rem 1.2rem;
+  border-radius: 10rem;
+  border: 1px solid #e1d9f7;
+}
+
+.card-title {
+  font-size: 1.45rem;
+  color: #2d2645;
+  margin: 1rem 0 0.8rem 0;
+  line-height: 1.6;
+  transition: color 0.3s;
+}
+
+.post-card:hover .card-title,
+.featured-post:hover .featured-title {
+  color: #6741d9;
+}
+
+.card-excerpt {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #55506b;
+  text-align: justify;
+  margin: 0 0 1.4rem 0;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px dashed #e1d9f7;
+  font-size: 1rem;
+  color: #8b86a3;
+}
+
+.card-meta .read-more {
+  color: #6741d9;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.meta-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+/* ---- CTA band ---- */
+
+.archive-cta {
+  background: linear-gradient(135deg, #46327c 0%, #6741d9 100%);
+  border-radius: 2rem;
+  margin-top: 6.4rem;
+  padding: 4rem 3.2rem;
+  text-align: center;
+  color: #fff;
+  direction: rtl;
+}
+
+.archive-cta-title {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+}
+
+.archive-cta-text {
+  font-size: 1.25rem;
+  line-height: 1.9;
+  color: #e1d9f7;
+  max-width: 62rem;
+  margin: 0 auto 2rem auto;
+}
+
+.archive-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 1rem 2.4rem;
+  border-radius: 10rem;
+  transition: all 0.3s;
+}
+
+.cta-btn-primary {
+  background-color: #fff;
+  color: #46327c;
+}
+
+.cta-btn-primary:hover {
+  background-color: #e1d9f7;
+}
+
+.cta-btn-ghost {
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.cta-btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
+}
+
+/* ---- responsive ---- */
+
+@media (max-width: 50em) {
+  .featured-post {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-media {
+    min-height: 20rem;
+  }
+
+  .featured-body {
+    padding: 2.4rem;
+  }
+
+  .archive-title {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 28.125em) {
+  .archive-hero {
+    padding: 4rem 1.6rem 7.2rem 1.6rem;
+  }
+
+  .archive-container {
+    padding: 0 1.6rem 4.8rem 1.6rem;
+  }
+
+  .post-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .archive-cta {
+    padding: 3.2rem 2rem;
+  }
+}

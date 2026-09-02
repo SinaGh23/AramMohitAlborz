@@ -2,6 +2,7 @@
 
 User-agent: *
 Allow: /
+Disallow: /blogs/_template/
 Disallow: /script.js
 Disallow: /*.js$
 

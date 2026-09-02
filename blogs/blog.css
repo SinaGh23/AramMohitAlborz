@@ -264,6 +264,24 @@ body {
 
 /******** article seo components ********/
 
+.img-credit {
+  direction: rtl;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0 0 1.6rem 0;
+}
+
+.img-credit a {
+  color: #888;
+  text-decoration: none;
+  border-bottom: 1px dotted #aaa;
+}
+
+.img-credit a:hover {
+  color: #6741d9;
+}
+
 .main-img {
   height: auto;
 }
@@ -484,8 +502,19 @@ body {
   }
 
   .blog-section {
+    display: flex;
+    flex-direction: column;
     margin-right: 0;
     margin-bottom: 4.6rem;
+  }
+
+  .blog-section-container {
+    order: 1;
+  }
+
+  .side {
+    order: 2;
+    margin: 2.4rem 1.6rem 0 1.6rem;
   }
 
   .blog-tozihat {
@@ -556,6 +585,18 @@ body {
 
   .navigation {
     gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    row-gap: 0;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  body {
+    overflow-x: hidden;
   }
 
   .second-header {

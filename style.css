@@ -1266,6 +1266,25 @@ html {
   padding: 0.4rem;
 }
 
+.all-posts-btn {
+  display: inline-block;
+  font-family: estedad;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.2rem 3.2rem;
+  border-radius: 10rem;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.35);
+  transition: all 0.3s;
+}
+
+.all-posts-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(102, 126, 234, 0.45);
+}
+
 /******** cta form********/
 
 .form-section {

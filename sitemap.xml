@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://www.arammohit.ir/</loc>
-    <lastmod>2025-11-14</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -25,10 +25,38 @@
     </image:image>
   </url>
 
+  <!-- Blog index -->
+  <url>
+    <loc>https://www.arammohit.ir/blogs/</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog: دفع مورچه -->
+  <url>
+    <loc>https://www.arammohit.ir/blogs/morche/morche.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.arammohit.ir/blogs/images/morche1.jpg</image:loc>
+      <image:title>دفع مورچه از خانه و سمپاشی مورچه</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.arammohit.ir/blogs/images/morche2.jpg</image:loc>
+      <image:title>مورچه کارگر در حال جستجوی غذا</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.arammohit.ir/blogs/images/morche3.jpg</image:loc>
+      <image:title>فعالیت کلنی مورچه‌های سیاه</image:title>
+    </image:image>
+  </url>
+
   <!-- Blog: سمپاشی و دفع کنه -->
   <url>
     <loc>https://www.arammohit.ir/blogs/kane/kane.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -48,7 +76,7 @@
   <!-- Blog: سمپاشی و دفع ساس -->
   <url>
     <loc>https://www.arammohit.ir/blogs/sas/sas.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -68,7 +96,7 @@
   <!-- Blog: دفع عقرب و روتیل -->
   <url>
     <loc>https://www.arammohit.ir/blogs/aghrab-roteyl/aghrab-roteyl.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -88,7 +116,7 @@
   <!-- Blog: سمپاشی و دفع مگس -->
   <url>
     <loc>https://www.arammohit.ir/blogs/magas/magas.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -108,7 +136,7 @@
   <!-- Blog: دفع موش و جوندگان -->
   <url>
     <loc>https://www.arammohit.ir/blogs/javandegan/javandegan.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -128,7 +156,7 @@
   <!-- Blog: سمپاشی و دفع موریانه -->
   <url>
     <loc>https://www.arammohit.ir/blogs/moriane/moriane.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -148,7 +176,7 @@
   <!-- Blog: سمپاشی و دفع پشه -->
   <url>
     <loc>https://www.arammohit.ir/blogs/pashe/pashe.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -168,7 +196,7 @@
   <!-- Blog: سمپاشی و دفع سوسک -->
   <url>
     <loc>https://www.arammohit.ir/blogs/sosari/sosari.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
