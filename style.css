@@ -1266,6 +1266,118 @@ html {
   padding: 0.4rem;
 }
 
+/* blog cards — same design as blogs/archive.css */
+
+.post-grid {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 3.2rem 6.4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(28rem, 100%), 1fr));
+  gap: 2.8rem;
+  direction: rtl;
+}
+
+.post-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  border: 1px solid #ece7f9;
+  box-shadow: 0 8px 28px rgba(70, 50, 124, 0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.35s;
+}
+
+.post-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 44px rgba(103, 65, 217, 0.18);
+  border-color: #c9bcf0;
+}
+
+.card-media {
+  position: relative;
+  height: 18rem;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.post-card:hover .card-img {
+  transform: scale(1.07);
+}
+
+.card-body {
+  padding: 1.8rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: right;
+}
+
+.card-chip {
+  align-self: flex-start;
+  background-color: #f4f1fc;
+  color: #6741d9;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.4rem 1.2rem;
+  border-radius: 10rem;
+  border: 1px solid #e1d9f7;
+}
+
+.card-title {
+  font-size: 1.45rem;
+  color: #2d2645;
+  margin: 1rem 0 0.8rem 0;
+  line-height: 1.6;
+  font-family: estedad;
+  transition: color 0.3s;
+}
+
+.post-card:hover .card-title {
+  color: #6741d9;
+}
+
+.card-excerpt {
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #55506b;
+  text-align: justify;
+  margin: 0 0 1.4rem 0;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px dashed #e1d9f7;
+  font-size: 1rem;
+  color: #8b86a3;
+}
+
+.card-meta .read-more {
+  color: #6741d9;
+  font-weight: 700;
+}
+
+@media (max-width: 28.125em) {
+  .post-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.4rem 1.6rem;
+  }
+}
+
 .all-posts-btn {
   display: inline-block;
   font-family: estedad;
