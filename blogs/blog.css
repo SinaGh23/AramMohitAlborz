@@ -647,3 +647,12 @@ body {
     font-size: 1rem;
   }
 }
+
+/* Images carry width/height attributes so the browser can reserve space (CLS).
+   Those attributes are ALSO presentational size hints, so an image sized by CSS
+   width alone would otherwise take the raw attribute height in pixels. Zero
+   specificity (:where) means this restores height:auto — letting the intrinsic
+   aspect ratio set the height — while any real CSS height rule still wins. */
+:where(img[width][height]) {
+  height: auto;
+}
