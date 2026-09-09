@@ -1676,3 +1676,129 @@ html {
 .about-us-header {
   font-family: estedad;
 }
+
+/********** FAQ SECTION **********/
+
+.faq-section {
+  padding: 8rem 0;
+  background: linear-gradient(180deg, #f5f7fa 0%, #ffffff 100%);
+  color: #333;
+}
+
+.faq-container {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 6.4rem;
+}
+
+.header-faq {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 3rem;
+  text-align: center;
+  font-family: estedad;
+  font-weight: 800;
+  margin-bottom: 1.6rem;
+}
+
+.faq-intro {
+  text-align: center;
+  color: #555;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  max-width: 70rem;
+  margin: 0 auto 3.6rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid #e6e8f0;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 10px rgba(45, 55, 72, 0.05);
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.faq-item[open] {
+  border-color: #667eea;
+  box-shadow: 0 6px 22px rgba(102, 126, 234, 0.16);
+}
+
+.faq-q {
+  cursor: pointer;
+  list-style: none;
+  padding: 1.8rem 2.2rem;
+  font-family: estedad;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  line-height: 1.8;
+}
+
+.faq-q::-webkit-details-marker {
+  display: none;
+}
+
+.faq-q::after {
+  content: "+";
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #667eea;
+  transition: transform 0.25s ease;
+}
+
+.faq-item[open] .faq-q::after {
+  content: "\2212";
+  transform: rotate(180deg);
+}
+
+.faq-q:hover {
+  color: #667eea;
+}
+
+.faq-a {
+  padding: 0 2.2rem 2rem;
+  color: #4a5568;
+  font-size: 1.05rem;
+  line-height: 2.1;
+}
+
+.faq-a p {
+  margin-bottom: 1rem;
+}
+
+.faq-a p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-a ul {
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+}
+
+.faq-a li {
+  margin-bottom: 0.7rem;
+}
+
+.mainheader-brand {
+  display: block;
+  font-size: 0.52em;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-top: 0.8rem;
+  opacity: 0.94;
+}

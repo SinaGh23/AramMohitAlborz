@@ -1,5 +1,8 @@
 # .htaccess for Aram Mohit Alborz - Pest Control Website
-# SEO and Performance Optimization
+#
+# NOTE: The site is currently hosted on GitHub Pages, which IGNORES this file
+# entirely. It is kept only so the rules are ready if the site ever moves to
+# Apache hosting. Do not rely on anything here while on GitHub Pages.
 
 # Enable Rewrite Engine
 <IfModule mod_rewrite.c>
@@ -10,16 +13,11 @@
     RewriteCond %{HTTPS} off
     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-    # Force www (or non-www - choose one)
-    # Uncomment the one you prefer:
-    
-    # Force www:
-    RewriteCond %{HTTP_HOST} ^arammohit\.ir [NC]
-    RewriteRule ^(.*)$ https://www.arammohit.ir/$1 [L,R=301]
-    
-    # Force non-www (commented out - we use www):
-    # RewriteCond %{HTTP_HOST} ^www\.arammohit\.ir [NC]
-    # RewriteRule ^(.*)$ https://arammohit.ir/$1 [L,R=301]
+    # Canonical host is the APEX domain (arammohit.ir) — this matches the
+    # live GitHub Pages setup and every canonical/og:url/sitemap entry.
+    # Force www -> non-www.
+    RewriteCond %{HTTP_HOST} ^www\.arammohit\.ir [NC]
+    RewriteRule ^(.*)$ https://arammohit.ir/$1 [L,R=301]
 
     # Remove trailing slash
     RewriteCond %{REQUEST_FILENAME} !-d

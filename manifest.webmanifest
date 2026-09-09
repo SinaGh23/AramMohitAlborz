@@ -2,7 +2,7 @@
   "name": "آرام محیط البرز - سمپاشی و دفع حشرات موذی",
   "short_name": "آرام محیط البرز",
   "description": "شرکت آرام محیط البرز ارائه دهنده خدمات سمپاشی، دفع حشرات موذی در کرج، البرز و تهران",
-  "start_url": "https://www.arammohit.ir/",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#2d5016",
@@ -11,13 +11,13 @@
   "dir": "rtl",
   "icons": [
     {
-      "src": "images/logo img/192.webp",
+      "src": "/images/logo%20img/192.webp",
       "type": "image/webp",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "images/logo img/512.webp",
+      "src": "/images/logo%20img/512.webp",
       "type": "image/webp",
       "sizes": "512x512",
       "purpose": "any maskable"
@@ -26,9 +26,9 @@
   "categories": ["business", "health", "lifestyle"],
   "screenshots": [
     {
-      "src": "images/hero image/photo heroo 5.webp",
+      "src": "/images/hero%20image/photo%20heroo%205.webp",
       "type": "image/webp",
-      "sizes": "1200x630"
+      "sizes": "1200x1048"
     }
   ]
 }

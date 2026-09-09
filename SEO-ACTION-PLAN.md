@@ -1,164 +1,125 @@
-# 🎯 SEO Action Plan - آرام محیط البرز
+# SEO Action Plan — آرام محیط البرز (arammohit.ir)
 
-## ✅ What's Already Done
+Last updated: 2026-09-09
 
-Your website is now **fully optimized** for SEO:
+## Hosting facts you must not forget
 
-- ✅ Homepage (index.html) - Complete meta tags, Schema.org, keywords
-- ✅ All 8 blog pages - Complete SEO optimization
-- ✅ robots.txt - Search engine instructions
-- ✅ sitemap.xml - Site structure for Google
-- ✅ .htaccess - Server optimization
-- ✅ manifest.webmanifest - PWA configuration
+| Fact | Value |
+|---|---|
+| Host | **GitHub Pages** (repo `SinaGh23/AramMohitAlborz`) |
+| Canonical domain | **`https://arammohit.ir`** (apex, **no `www`**) |
+| `www.arammohit.ir` | 301-redirects to the apex domain |
+| `.htaccess` | **Completely ignored.** GitHub Pages is not Apache. |
+| 404 page | `/404.html` — GitHub Pages serves it automatically |
 
----
-
-## 📋 What You Need To Do Now
-
-### 1. Upload Your Website (CRITICAL)
-
-Upload these files to your hosting at **www.arammohit.ir**:
-
-```
-- index.html
-- robots.txt
-- sitemap.xml
-- .htaccess
-- manifest.webmanifest
-- All blog files in /blogs/ folder
-- All images, CSS, JS files
-```
-
-### 2. Register with Google (Week 1)
-
-#### A. Google Search Console
-
-1. Go to: https://search.google.com/search-console
-2. Add property: www.arammohit.ir
-3. Verify ownership (HTML file or DNS)
-4. Submit sitemap: https://www.arammohit.ir/sitemap.xml
-5. Request indexing for homepage
-
-#### B. Google My Business
-
-1. Go to: https://www.google.com/business
-2. Create business listing for "آرام محیط البرز"
-3. Add:
-   - Address: کرج، البرز
-   - Phone: 09193613357
-   - Category: خدمات سمپاشی
-   - Photos of your work
-   - Business hours
-4. Verify your business (postcard or phone)
-
-#### C. Google Analytics
-
-1. Go to: https://analytics.google.com
-2. Create account for www.arammohit.ir
-3. Get tracking code
-4. Add tracking code to all pages (before `</head>`)
-
-### 3. Check Your SEO (Week 1-2)
-
-Test your website:
-
-- **Google Rich Results Test:** https://search.google.com/test/rich-results
-- **Google Mobile-Friendly Test:** https://search.google.com/test/mobile-friendly
-- **PageSpeed Insights:** https://pagespeed.web.dev
-
-### 4. SSL Certificate (CRITICAL)
-
-Make sure your hosting has **HTTPS** enabled:
-
-- Your domain should be: `https://www.arammohit.ir` (not http)
-- Contact your hosting provider if not enabled
+**Rule: every canonical, `og:url`, sitemap `<loc>` and Schema URL must use
+`https://arammohit.ir` with no `www`.** Getting this wrong is what caused the
+2026 ranking collapse.
 
 ---
 
-## 📊 Expected Results
+## What broke the rankings (and is now fixed)
 
-### After 1 Month:
-
-- Google will index your website
-- Appear in search results for "سمپاشی کرج"
-- 300-500 visitors/month
-
-### After 3 Months:
-
-- Rank on first page for main keywords
-- 2000-3000 visitors/month
-- 10-15 customer inquiries/month
-
-### After 6 Months:
-
-- Top 3 ranking for "سمپاشی کرج"
-- 5000+ visitors/month
-- 30-50 customer inquiries/month
+1. **Canonical / sitemap pointed at `www.arammohit.ir`, which 301-redirects.**
+   204 URLs across the site. Every sitemap entry resolved to a redirect, so
+   Google reported "Page with redirect" for the whole sitemap, and every page's
+   canonical pointed at a URL that redirects somewhere else. This is the single
+   biggest cause. Introduced in commit `33c0033`.
+2. **Fabricated `aggregateRating` (4.9 from 127 reviews) with no reviews on the
+   page.** This violates Google's structured-data policy for review snippets and
+   risks a manual action. Removed.
+3. **`BreadcrumbList` that listed the nav menu** instead of a page hierarchy —
+   invalid markup on the homepage. Replaced with `WebSite` schema.
+4. **Unencoded spaces in absolute image URLs** (`/images/logo img/...`) inside
+   `og:image` and Schema `logo`/`image`, making them invalid URLs.
+5. Internal links pointed to `/index.html` instead of `/`, creating a duplicate
+   of the homepage.
 
 ---
 
-## 🔧 Optional (But Recommended)
+## Things only you can do (Claude cannot)
 
-### Week 2-4:
+### 1. Google Search Console — do this first, today
 
-- Add more content (1-2 blog posts/month)
-- Collect customer reviews on Google
-- Add FAQ section to homepage
-- Create social media profiles (Instagram, Telegram)
+The site previously ranked #1 with a plain `<title>آرام محیط البرز</title>` and
+no canonical tag at all. That means the ranking was carried by **off-page and
+local signals**, not on-page text. Restoring crawl health is what matters most.
 
-### Monthly:
+1. Go to <https://search.google.com/search-console>.
+2. Make sure you have a property for **`https://arammohit.ir`** (or a Domain
+   property for `arammohit.ir`). If your only property is the `www` one, add the
+   non-www property — **all of your data has been going to the wrong property.**
+3. **URL Inspection** → paste `https://arammohit.ir/` → **Request Indexing**.
+   Repeat for `https://arammohit.ir/blogs/` and each of the 9 article URLs.
+4. **Sitemaps** → remove any old sitemap entry → submit `sitemap.xml`.
+5. **Pages** report → check for "Page with redirect", "Duplicate, Google chose a
+   different canonical", and "Alternate page with proper canonical tag". These
+   should drain over the next 2–4 weeks.
+6. **Manual actions** and **Security issues** → confirm both are clean. If there
+   is a structured-data manual action from the fake review markup, file a
+   reconsideration request now that the markup is gone.
 
-- Check Google Search Console for errors
-- Monitor traffic in Google Analytics
-- Update blog content
-- Respond to customer reviews
+### 2. Google Business Profile — the biggest lever for "سمپاشی کرج"
+
+For a local service query like سمپاشی کرج, the map pack and the business profile
+usually outrank on-page factors.
+
+- Claim/verify the profile at <https://business.google.com>.
+- Category: **Pest Control Service**.
+- Address, phone `09193613357`, and hours must match the website **character for
+  character** (the site says: کرج، دهقان ویلا دوم، کوچه بابایی، پلاک ۹۶، واحد ۱).
+- Add the website URL as `https://arammohit.ir` (no www).
+- Upload real job photos and the وزارت بهداشت permit.
+- **Ask every satisfied customer for a Google review.** This is the highest-value
+  recurring action available to you. Real reviews also make it legitimate to
+  re-add rating markup later.
+
+### 3. Iranian directories and citations
+
+Consistent Name/Address/Phone listings on: [ترب](https://torob.com),
+[کجارو], [ایران‌جیب], [جاباما]-style local directories, [بلد], [نشان] (Neshan
+maps), [بالادِرِکت], and any کرج business directory. Same NAP everywhere.
+
+### 4. Files you should decide about
+
+- **`images/logo img/Sina Gholami resume.pdf`** — a personal résumé is publicly
+  downloadable at `https://arammohit.ir/images/logo%20img/Sina%20Gholami%20resume.pdf`.
+  It has nothing to do with the business. **Recommend deleting it.**
+- The `.md` docs in this repo are served publicly too; they are now blocked in
+  `robots.txt`, but you may prefer to delete them from the deployed branch.
+
+### 5. Verify after deploying
+
+- <https://search.google.com/test/rich-results> → test `https://arammohit.ir/`
+  (expect `PestControlService`, `WebSite`, `FAQPage`, no errors).
+- <https://pagespeed.web.dev/> → test the homepage on **Mobile**.
+- Check <https://arammohit.ir/robots.txt> and `/sitemap.xml` load correctly.
 
 ---
 
-## ⚠️ Important Notes
+## Realistic timeline
 
-1. **Don't change the code structure** - All SEO tags are already optimized
-2. **Keep sitemap.xml updated** - If you add new pages
-3. **Use keywords naturally** - Don't stuff keywords
-4. **Mobile-first** - Most users are on mobile
-5. **Speed matters** - Keep images optimized
+| When | What to expect |
+|---|---|
+| 1–3 days | Google recrawls the homepage after you request indexing |
+| 1–2 weeks | Sitemap errors clear; correct canonical registered |
+| 2–6 weeks | Rankings recover toward previous positions |
+| 1–3 months | Gains beyond the previous position, if reviews and citations grow |
 
----
-
-## 📞 Your Contact Info
-
-- **Website:** www.arammohit.ir
-- **Phone:** 09193613357 / 09194870530 / 026-34209019
-- **Location:** کرج، البرز، ایران
+Do **not** make further large structural changes during this window — Google
+needs a stable site to re-establish trust.
 
 ---
 
-## 🎯 Priority Checklist
+## Next content step (not yet done)
 
-**This Week:**
+Dedicated service pages would add topical depth without cannibalising the
+homepage's hold on سمپاشی کرج:
 
-- [ ] Upload website to hosting
-- [ ] Enable HTTPS/SSL
-- [ ] Register Google Search Console
-- [ ] Submit sitemap.xml
-- [ ] Register Google My Business
+- `/khadamat/sampashi-manzel/` — سمپاشی منزل و آپارتمان
+- `/khadamat/sampashi-restaurant/` — سمپاشی رستوران و آشپزخانه صنعتی
+- `/khadamat/sampashi-sanati/` — سمپاشی کارخانه و انبار
+- `/khadamat/sampashi-bimarestan/` — سمپاشی بیمارستان و مراکز درمانی
 
-**Next Week:**
-
-- [ ] Verify Google My Business
-- [ ] Set up Google Analytics
-- [ ] Test website on mobile
-- [ ] Check all links work
-
-**This Month:**
-
-- [ ] Get first customer reviews
-- [ ] Share website on social media
-- [ ] Monitor first visitors
-
----
-
-**Your website is ready for SEO success! 🚀**
-
-_Date: October 13, 2025_
-_Domain: www.arammohit.ir_
+Each needs 800+ words of genuinely specific content (process, timing, safety,
+what the customer must prepare) — not spun variations of each other.

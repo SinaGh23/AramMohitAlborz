@@ -1,36 +1,15 @@
-# robots.txt for آرام محیط البرز - Aram Mohit Alborz Pest Control
+# robots.txt — آرام محیط البرز | شرکت سمپاشی کرج
+# https://arammohit.ir
 
 User-agent: *
 Allow: /
+
+# Internal project docs — not content, keep them out of the index
+Disallow: /SEO-GUIDE.md
+Disallow: /SEO-ACTION-PLAN.md
+Disallow: /DESIGN-IMPROVEMENTS.md
+Disallow: /READ.md
+Disallow: /blogs/HOW-TO-ADD-A-POST.md
 Disallow: /blogs/_template/
-Disallow: /script.js
-Disallow: /*.js$
 
-# Sitemap location
-Sitemap: https://www.arammohit.ir/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 10
-
-# Allow all major search engines
-User-agent: Googlebot
-Allow: /
-
-User-agent: Googlebot-Image
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-User-agent: Baiduspider
-Allow: /
-
-User-agent: YandexBot
-Allow: /
-
+Sitemap: https://arammohit.ir/sitemap.xml
