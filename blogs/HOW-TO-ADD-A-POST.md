@@ -37,3 +37,30 @@
 
 - در Google Search Console آدرس جدید را Inspect و Request Indexing کن.
 - سایت روی GitHub Pages است؛ فقط commit + push کافی است.
+
+## After editing CSS or JS: bump the cache version
+
+GitHub Pages serves `style.css` / `blog.css` / `script.js` with
+`Cache-Control: max-age=14400`, so returning visitors keep the old file for up
+to 4 hours and will see a half-broken page (new HTML, old CSS).
+
+Every local stylesheet and script is linked with a version stamp:
+
+```html
+<link rel="stylesheet" href="style.css?v=20260909a" />
+<script defer src="script.js?v=20260909a"></script>
+```
+
+**Whenever you change a `.css` or `.js` file, bump that stamp in every HTML
+file** (e.g. `?v=20260909a` -> `?v=20260910a`). Changing the query string makes
+browsers treat it as a new file and fetch it immediately.
+
+From the repo root:
+
+```bash
+OLD=20260909a; NEW=20260910a
+grep -rl "?v=$OLD" --include=*.html . | xargs sed -i "s/?v=$OLD/?v=$NEW/g"
+```
+
+Do NOT add a version stamp to the CDN links (Vazirmatn, ionicons, EmailJS) —
+those are already pinned to a specific release.
