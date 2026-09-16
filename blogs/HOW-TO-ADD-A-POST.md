@@ -60,19 +60,19 @@ to 4 hours and will see a half-broken page (new HTML, old CSS).
 Every local stylesheet and script is linked with a version stamp:
 
 ```html
-<link rel="stylesheet" href="style.css?v=20260916a" />
-<script defer src="script.js?v=20260916a"></script>
+<link rel="stylesheet" href="style.css?v=20260917a" />
+<script defer src="script.js?v=20260917a"></script>
 ```
 
 **Whenever you change a `.css` or `.js` file, bump that stamp in every HTML
-file** (e.g. `?v=20260916a` -> `?v=20260917a`). Changing the query string makes
+file** (e.g. `?v=20260917a` -> `?v=20260918a`). Changing the query string makes
 browsers treat it as a new file and fetch it immediately.
 
 From the repo root:
 
 ```bash
-OLD=20260916a; NEW=20260917a
-grep -rl "?v=$OLD" --include=*.html . | xargs sed -i '' "s/?v=$OLD/?v=$NEW/g"
+OLD=20260917a; NEW=20260918a
+grep -rl "?v=$OLD" --include='*.html' . | xargs sed -i '' "s/?v=$OLD/?v=$NEW/g"
 ```
 
 Do NOT add a version stamp to the EmailJS CDN link (loaded on demand from
