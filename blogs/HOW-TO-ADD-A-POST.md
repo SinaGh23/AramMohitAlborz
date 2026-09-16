@@ -22,16 +22,29 @@
 
 ## ۳) عکس‌ها
 
-- ۳ عکس در `blogs/images/` با نام `<slug>1..3` (webp یا jpg بهینه‌شده، زیر ۲۰۰KB).
-- منبع آزاد (ویکی‌مدیا کامنز با لایسنس CC/PD) یا عکس خود شرکت؛ برای عکس‌های CC خط اعتبار (`img-credit`) زیر عکس‌ها بیاید.
-- `alt` فارسی توصیفی، `width`/`height` مشخص، عکس دوم و سوم `loading="lazy"`.
+- ۳ عکس در `blogs/images/` با نام `<slug>1..3` (webp ترجیحاً، هر کدام زیر ۸۰KB).
+- منبع آزاد (ویکی‌مدیا کامنز با لایسنس CC/PD) یا عکس خود شرکت؛ برای عکس‌های CC خط اعتبار (`img-credit`) زیر عکس‌ها بیاید. **عکس واقعی از کار خود شرکت همیشه بهتر از عکس استوک است.**
+- `alt` فارسی توصیفی، `width`/`height` مشخص. این سه عکس بالای صفحه‌اند؛ **`loading="lazy"` نگذار**.
+- اگر عکس از ۴۵۰px پهن‌تر است، یک نسخه‌ی `<slug>1-400w.webp` هم بساز و `srcset` بگذار (نمونه: `blogs/morche/morche.html`).
+- **عکس اشتراک‌گذاری (og:image):** یک JPG با ابعاد ۱۲۰۰×۶۳۰ در `blogs/images/og/<slug>.jpg` (عکس مقاله + عنوان روی زمینه‌ی بنفش، مثل بقیه‌ی فایل‌های همان پوشه). واتس‌اپ پیش‌نمایش WebP را مطمئن نشان نمی‌دهد، پس og:image باید JPG باشد.
+- ساخت webp و تغییر اندازه روی این مک: در یک پوشه‌ی موقت `npm i sharp` و بعد
+  `node -e "require('sharp')('in.jpg').resize({width:900}).webp({quality:80}).toFile('out.webp')"`.
 
 ## ۴) اتصال به بقیه سایت (هر ۴ مورد الزامی)
 
-1. **sitemap.xml**: بلوک `<url>` جدید با عکس‌ها + به‌روزرسانی `lastmod` صفحه بلاگ.
+1. **sitemap.xml**: بلوک `<url>` جدید (فقط `<loc>`، `<lastmod>` و `<image:image><image:loc>`) + به‌روزرسانی `lastmod` صفحه بلاگ. `changefreq`/`priority` لازم نیست (گوگل نادیده می‌گیرد).
+   **blogs/feed.xml**: یک `<item>` جدید بالای بقیه + `lastBuildDate`.
 2. **blogs/index.html**: مقاله جدید را «جدیدترین مقاله» (featured) کن و مقاله featured قبلی را به شبکه کارت‌ها منتقل کن؛ اسکیمای `Blog` بالای صفحه هم یک `BlogPosting` جدید بگیرد.
 3. **index.html (صفحه اصلی)**: در صورت مهم بودن مقاله، کارت جدید در بخش بلاگ اضافه کن.
 4. **سایدبار ۹+ مقاله قبلی**: لینک `side-link` مقاله جدید را به همه پست‌های قبلی اضافه کن (اسکریپت پایتون با replace ساده کافی است).
+
+## ۴.۵) چیزهایی که در قالب آماده است و نباید حذف شود
+
+- فونت‌ها از `/font/` خود سایت لود می‌شوند (نه CDN) و `preload` شده‌اند.
+- لوگوی هدر لینک به صفحه اصلی است؛ شماره‌های سایدبار و فوتر لینک `tel:` هستند.
+- اسکیمای `BlogPosting` دارای `@id`، `url`، `publisher` با `@id: https://arammohit.ir/#business` و `isPartOf` بلاگ است؛ برای مقاله‌ی جدید فقط slug، عنوان، توضیح، تاریخ‌ها و عکس‌ها را عوض کن.
+- متاهای `og:image:width/height/alt`، `article:published_time` و `article:modified_time` را با مقاله‌ی جدید هماهنگ کن.
+- اگر محتوای مقاله‌ی قدیمی را واقعاً به‌روز کردی: `dateModified` در اسکیما، `article:modified_time`، تاریخ «به‌روزرسانی» در `post-meta` و `lastmod` در sitemap را هم‌زمان عوض کن. برای تغییرهای جزئی تاریخ را جلو نکش.
 
 ## ۵) بعد از انتشار
 
@@ -47,20 +60,21 @@ to 4 hours and will see a half-broken page (new HTML, old CSS).
 Every local stylesheet and script is linked with a version stamp:
 
 ```html
-<link rel="stylesheet" href="style.css?v=20260909a" />
-<script defer src="script.js?v=20260909a"></script>
+<link rel="stylesheet" href="style.css?v=20260916a" />
+<script defer src="script.js?v=20260916a"></script>
 ```
 
 **Whenever you change a `.css` or `.js` file, bump that stamp in every HTML
-file** (e.g. `?v=20260909a` -> `?v=20260910a`). Changing the query string makes
+file** (e.g. `?v=20260916a` -> `?v=20260917a`). Changing the query string makes
 browsers treat it as a new file and fetch it immediately.
 
 From the repo root:
 
 ```bash
-OLD=20260909a; NEW=20260910a
-grep -rl "?v=$OLD" --include=*.html . | xargs sed -i "s/?v=$OLD/?v=$NEW/g"
+OLD=20260916a; NEW=20260917a
+grep -rl "?v=$OLD" --include=*.html . | xargs sed -i '' "s/?v=$OLD/?v=$NEW/g"
 ```
 
-Do NOT add a version stamp to the CDN links (Vazirmatn, ionicons, EmailJS) —
-those are already pinned to a specific release.
+Do NOT add a version stamp to the EmailJS CDN link (loaded on demand from
+`script.js`) — it is already pinned to a release. Fonts and icons are
+self-hosted now; there are no other CDN links.

@@ -1,34 +1,28 @@
 {
-  "name": "آرام محیط البرز - سمپاشی و دفع حشرات موذی",
+  "id": "/",
+  "name": "آرام محیط البرز | شرکت سمپاشی کرج",
   "short_name": "آرام محیط البرز",
-  "description": "شرکت آرام محیط البرز ارائه دهنده خدمات سمپاشی، دفع حشرات موذی در کرج، البرز و تهران",
+  "description": "شرکت سمپاشی آرام محیط البرز با مجوز رسمی وزارت بهداشت؛ سمپاشی و دفع حشرات موذی در کرج و استان البرز",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#2d5016",
-  "orientation": "portrait-primary",
+  "theme_color": "#667eea",
   "lang": "fa",
   "dir": "rtl",
   "icons": [
     {
-      "src": "/images/logo%20img/192.webp",
-      "type": "image/webp",
+      "src": "/images/icons/icon-192.png",
+      "type": "image/png",
       "sizes": "192x192",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
-      "src": "/images/logo%20img/512.webp",
-      "type": "image/webp",
+      "src": "/images/icons/icon-512.png",
+      "type": "image/png",
       "sizes": "512x512",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ],
-  "categories": ["business", "health", "lifestyle"],
-  "screenshots": [
-    {
-      "src": "/images/hero%20image/photo%20heroo%205.webp",
-      "type": "image/webp",
-      "sizes": "1200x1048"
-    }
-  ]
+  "categories": ["business", "health", "lifestyle"]
 }

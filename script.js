@@ -7,7 +7,8 @@ const btnNavEl = document.querySelector(".button-mobile-nav");
 const headerEl = document.querySelector(".header-section");
 
 btnNavEl.addEventListener("click", function () {
-  headerEl.classList.toggle("nav-open");
+  const isOpen = headerEl.classList.toggle("nav-open");
+  btnNavEl.setAttribute("aria-expanded", String(isOpen));
 });
 
 /********* scroll *********/
@@ -16,19 +17,19 @@ const allLinks = document.querySelectorAll("a");
 
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
-    const href = link.getAttribute("href");
+    const href = link.getAttribute("href") || "";
 
-    if (href.startsWith("#")) {
-      e.preventDefault();
-    }
-
-    if (href.startsWith("#")) {
-      console.log(href);
+    if (href.length > 1 && href.startsWith("#")) {
       const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
+      if (sectionEl) {
+        e.preventDefault();
+        sectionEl.scrollIntoView({ behavior: "smooth" });
+      }
     }
-    if (link.classList.contains("nav-items"))
-      headerEl.classList.toggle("nav-open");
+    if (link.classList.contains("nav-items")) {
+      headerEl.classList.remove("nav-open");
+      btnNavEl.setAttribute("aria-expanded", "false");
+    }
   });
 });
 
@@ -58,9 +59,35 @@ obs.observe(heroSectionEl);
 
 /******** form *********/
 
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (event) {
+// EmailJS is only needed when someone actually uses the form, so it is
+// downloaded on first interaction instead of on every page load.
+let emailjsReady = null;
+
+function loadEmailJS() {
+  if (!emailjsReady) {
+    emailjsReady = new Promise(function (resolve, reject) {
+      const script = document.createElement("script");
+      script.src =
+        "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+      script.onload = function () {
+        emailjs.init({ publicKey: "30X3SAC2YqcYxxM8y" });
+        resolve();
+      };
+      script.onerror = function () {
+        emailjsReady = null;
+        reject(new Error("EmailJS failed to load"));
+      };
+      document.head.appendChild(script);
+    });
+  }
+  return emailjsReady;
+}
+
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("focusin", loadEmailJS, { once: true });
+
+contactForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const formData = {
@@ -72,39 +99,33 @@ document
       to_name: "sina gholami",
     };
 
-    emailjs.send("service_03dev5j", "template_fawblyv", formData).then(
-      function (response) {
-        alert("فرم با موفقیت ارسال شد");
-        console.log("success!", response.status, response.text);
-      },
-      function (error) {
-        alert("ارسال فرم با خطا مواجه شد");
-        console.log("failed...", error);
-      }
-    );
+    loadEmailJS()
+      .then(function () {
+        return emailjs.send("service_03dev5j", "template_fawblyv", formData);
+      })
+      .then(
+        function () {
+          if (typeof gtag === "function") {
+            gtag("event", "generate_lead", { form_name: "contact_form" });
+          }
+          alert("فرم با موفقیت ارسال شد");
+        },
+        function (error) {
+          alert("ارسال فرم با خطا مواجه شد");
+          console.error("form submit failed", error);
+        }
+      );
   });
 
 /******** Gallery Functionality *********/
 
-// Gallery images array
-const galleryImages = [
-  "images/gallery-images/photo_2025-10-24 22.27.52.webp",
-  "images/gallery-images/photo_2025-10-24 22.27.55.webp",
-  "images/gallery-images/photo_2025-10-24 22.27.57.webp",
-  "images/gallery-images/photo_2025-10-24 22.27.59.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.01.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.05.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.09.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.11.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.13.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.15.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.17.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.19.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.21.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.23.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.25.webp",
-  "images/gallery-images/photo_2025-10-24 22.28.27.webp",
-];
+// Gallery images come from the preview grid in the HTML, so file names and
+// alt text live in one place.
+const galleryImages = Array.from(
+  document.querySelectorAll(".gallery-preview-item img")
+).map(function (img) {
+  return { src: img.getAttribute("src"), alt: img.getAttribute("alt") };
+});
 
 let currentImageIndex = 0;
 const galleryModal = document.getElementById("galleryModal");
@@ -133,14 +154,15 @@ function initGallery() {
 function createThumbnails() {
   galleryThumbnails.innerHTML = "";
 
-  galleryImages.forEach((imageSrc, index) => {
+  galleryImages.forEach((image, index) => {
     const thumbnail = document.createElement("div");
     thumbnail.className = "thumbnail";
     if (index === 0) thumbnail.classList.add("active");
 
     const img = document.createElement("img");
-    img.src = imageSrc;
-    img.alt = "نمونه کار سمپاشی";
+    img.src = image.src.replace(/\.webp$/, "-400w.webp");
+    img.alt = image.alt;
+    img.loading = "lazy";
 
     thumbnail.appendChild(img);
     thumbnail.addEventListener("click", () => goToImage(index));
@@ -225,7 +247,8 @@ function nextImage() {
 // Update gallery display
 function updateGalleryDisplay() {
   // Update main image
-  gallerySlide.src = galleryImages[currentImageIndex];
+  gallerySlide.src = galleryImages[currentImageIndex].src;
+  gallerySlide.alt = galleryImages[currentImageIndex].alt;
 
   // Update counter
   currentImageSpan.textContent = currentImageIndex + 1;
@@ -250,14 +273,22 @@ function updateGalleryDisplay() {
 let touchStartX = 0;
 let touchEndX = 0;
 
-gallerySlide.addEventListener("touchstart", (e) => {
-  touchStartX = e.changedTouches[0].screenX;
-});
+gallerySlide.addEventListener(
+  "touchstart",
+  (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  },
+  { passive: true }
+);
 
-gallerySlide.addEventListener("touchend", (e) => {
-  touchEndX = e.changedTouches[0].screenX;
-  handleSwipe();
-});
+gallerySlide.addEventListener(
+  "touchend",
+  (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  },
+  { passive: true }
+);
 
 function handleSwipe() {
   const swipeThreshold = 50;

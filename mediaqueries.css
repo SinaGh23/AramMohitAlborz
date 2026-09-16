@@ -31,6 +31,10 @@
     padding-right: 4.8rem;
   }
 
+  .khadamat-intro {
+    padding-right: 4.8rem;
+  }
+
   .khadamat-titr {
     padding-right: 4.8rem;
   }
@@ -152,6 +156,7 @@
 
   .why-us {
     padding-bottom: 1.2rem;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .form-section-second-header {
@@ -451,6 +456,16 @@
     margin-bottom: 2rem;
   }
 
+  .khadamat-intro {
+    margin: -0.8rem 0 1.6rem;
+    padding: 0 1rem;
+    font-size: 1.15rem;
+  }
+
+  .khadamat-desc {
+    font-size: 1.05rem;
+  }
+
   .how-text-number {
     font-size: 4.5rem;
   }
@@ -625,11 +640,11 @@
     transform: translateX(0);
   }
 
-  .nav-open .icon-mobile-nav[name="close-outline"] {
+  .nav-open .icon-mobile-nav.icon-close {
     display: block;
   }
 
-  .nav-open .icon-mobile-nav[name="menu-outline"] {
+  .nav-open .icon-mobile-nav.icon-menu {
     display: none;
   }
 
@@ -826,6 +841,19 @@
     line-height: 1.4;
     margin-bottom: 1.2rem;
     padding: 0 0.3rem;
+  }
+
+  .khadamat-intro {
+    margin: -0.4rem 0 1rem;
+    padding: 0 0.3rem;
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  .khadamat-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-top: 0.6rem;
   }
 
   .gallery {
@@ -1135,6 +1163,9 @@
 /********** FAQ SECTION **********/
 
 @media (max-width: 900px) {
+  .why-us-header {
+    font-size: 2.2rem;
+  }
   .faq-container {
     padding: 0 3.2rem;
   }
@@ -1144,6 +1175,10 @@
 }
 
 @media (max-width: 600px) {
+  .why-us-header {
+    font-size: 1.8rem;
+    margin: 4rem 1rem 0;
+  }
   .faq-section {
     padding: 5rem 0;
   }

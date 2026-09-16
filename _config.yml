@@ -1,0 +1,8 @@
+# GitHub Pages builds this site with Jekyll. Files listed under `exclude` stay
+# in the repository but are NOT published on arammohit.ir, so internal notes
+# never become public, crawlable URLs. Add any new internal .md file here.
+exclude:
+  - SEO-PLAN.md
+  - DESIGN-IMPROVEMENTS.md
+  - READ.md
+  - blogs/HOW-TO-ADD-A-POST.md
